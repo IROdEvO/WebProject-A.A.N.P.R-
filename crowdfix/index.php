@@ -11,66 +11,82 @@
 	<title>CROWD FIX</title>
 	<link rel="stylesheet" type="text/css" href="login.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+	
+	<link href='https://fonts.googleapis.com/css?family=Archivo' rel='stylesheet'>
+	
+	
 <style>
 table {
     border: none;
     border-collapse: collapse;
     border-color: #e6bb00;
-   	margin-left: 5%;
-   	margin-right: 5%;
+   	margin-left: 15%;
+   	margin-right: 15%;
    	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+   	font-family: Comic Sans MS;
+   	font-size: 15pt;
 }
 
 td {
     text-align: left;
     padding: 8px;
-    color: white;
-
+    
 }
 
-tr {
-    background-color: white;
-    color: white;
-}
+
 
 button {
+	font-family: Comic Sans MS;
 	font-weight: bold;
     background-color: #e6bb00;
     border: none;
     color: white;
     border-radius: 5px;
-    padding: 16px 32px;
+    padding: 10px 22px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+    font-size: 25px;
+    margin: 4px 4px;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     cursor: pointer;
     box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+
 }
 
 button:hover {
-    background-color: green;
+    background-color: orangered;
     color: white;
 }
 a{
 	text-decoration:none;
-	color: black;
+	color: darkgrey;
 }
 a:hover{
 	text-decoration:none;
-	color: green;
+	color: orangered;
 	font-weight: bold;
 }
 h2{
-	color: white;
+	color: #e6bb00;
+	font-family: Archivo;
+}
+h1{
+	font-family: Archivo;
+
 }
 #Problem{
 	color: #e6bb00;
 }
+li{
+	 font-family:Archivo;
+}
+body{
+	background-image: url("images/background.jpg");
+}
+
+
 </style>
 
 </head>
@@ -82,7 +98,7 @@ h2{
 	<li><a href="account.php"><i class="fa fa-address-card"></i> My Account</a></li>
 	<li><a href="members.php"><i class="fa fa-users"></i> Members</a></li>
 	<li style="float: right;"><a href="index.php?action=logout"><i class="fa fa-sign-out"></i> Log Out</a></li>
-	<li style="float: right;">
+	<li style="float: right; ">
 		<?php 
 		$check = mysqli_query($connect,"SELECT * FROM users WHERE username='".$_SESSION['username']."'");
 		$row = mysqli_num_rows($check);
@@ -93,18 +109,18 @@ h2{
 		?></a></li>
 </ul>
 <body>
-	<h1 align="center">Have a <a id="Problem">Problem</a>? Post it here</h1>
+	<h1 align="center">Have a <a id="Problem">Problem</a>?  Post it here</h1>
 <center>
-<a href="post.php"><button>Post a Topic</button></a>
-</center>
+<a href="post.php"><button>Start a thread</button></a>
+</center><br/>
+<h2 align="center">Browse Existing Threads Here</h2><br/>
 
-<h2 align="center" >Frequently Added Topics</h2>
 
-<?php echo '<table border="1px;">'; ?>
-	<tr style="background-color:#e6bb00; font-weight: bold; ">
-		<td width = 800px; style="text-align: center;">Topic</td>
-		<td width = 400px; style="text-align: center;">Creator</td>
-		<td width = 400px; style="text-align: center;">Date</td>
+<?php echo '<table border="0px;">'; ?>
+	<tr style="color:white; font-weight: bold; ">
+		<td width = 20%; style="text-align: center;">Topic</td>
+		<td width = 10%; style="text-align: center;">Creator</td>
+		<td width = 20%; style="text-align: center;">Date</td>
 	</tr>
 
 </body>
